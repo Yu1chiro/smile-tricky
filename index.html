@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-content">
+        <h1>Nostalgic 2004</h1>
+        <p>Hello let's be friends now ! click image !</p>
+        <img src="smile.jpg"  id="startBtn" alt="">
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+         img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: cover;
+            cursor: pointer;
+            width: 80%;
+            height: auto;
+         }
+        button {
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+        }
+
+        #permissionMsg {
+            font-size: 1.1rem;
+            color: yellow;
+        }
+    </style>
+    <script src="main.js"></script>
+</body>
+</html>
