@@ -1,5 +1,5 @@
 let tabCount = 3; // Mulai dengan 3 tab
-let popUpCount = 6; // Mulai dengan 6 pop-up
+let popUpCount = 10; // Mulai dengan 6 pop-up
 let tabs = [];
 let popUpArray = [];
 let audio = new Audio('idiot.mp3'); // Memuat audio
@@ -44,7 +44,7 @@ function addFlashingToTab(tab) {
                 <title>HACKED YOUR AN IDIOT HAHAHAHA!</title>
                 <style>
                     body {
-                        background-color: black;
+                        background-color: red;
                         color: red;
                         transition: background-color 0.1s, color 0.1s;
                         font-family: Arial, sans-serif;
@@ -60,8 +60,8 @@ function addFlashingToTab(tab) {
                 <script>
                     let flash = false;
                     setInterval(() => {
-                        document.body.style.backgroundColor = flash ? 'white' : 'black' ;  
-                        document.body.style.color = flash ? 'black' : 'red';
+                        document.body.style.backgroundColor = flash ? 'white' : 'red' ;  
+                        document.body.style.color = flash ? 'red' : 'red';
                         flash = !flash;
                     }, 100);
                 </script>
@@ -84,7 +84,7 @@ function createPopUps(tabWindow, multiplier) {
                         <style>
                             body {
                                 font-family: Arial, sans-serif;
-                                background-color: black;
+                                background-color: red;
                                 color: red;
                                 display: flex;
                                 align-items: center;
@@ -99,8 +99,8 @@ function createPopUps(tabWindow, multiplier) {
                         <script>
                             let flash = false;
                             setInterval(() => {
-                                document.body.style.backgroundColor = flash ? 'white' : 'black' ;  
-                                document.body.style.color = flash ? 'black' : 'red';
+                                document.body.style.backgroundColor = flash ? 'white' : 'red' ;  
+                                document.body.style.color = flash ? 'red' : 'red';
                                 flash = !flash;
                             }, 50);
                         </script>
@@ -157,8 +157,8 @@ function setRandomPosition(popUp) {
 function startBackgroundFlashing() {
     let flash = false;
     setInterval(() => {
-        document.body.style.backgroundColor = flash ? 'white' : 'black' ;  
-        document.body.style.color = flash ? 'black' : 'white';
+        document.body.style.backgroundColor = flash ? 'white' : 'red' ;  
+        document.body.style.color = flash ? 'red' : 'white';
         flash = !flash;
-    }, 100);
+    }, 50);
 }
