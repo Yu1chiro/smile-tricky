@@ -1,5 +1,5 @@
 let tabCount = 3; // Mulai dengan 3 tab
-let popUpCount = 10; // Mulai dengan 6 pop-up
+let popUpCount = 40; // Mulai dengan 6 pop-up
 let tabs = [];
 let popUpArray = [];
 let audio = new Audio('idiot.mp3'); // Memuat audio
